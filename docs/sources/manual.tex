@@ -417,7 +417,7 @@ This switch is generally useful for architectures with more than \mono{10} memor
 
 This example will assemble the file \mono{source.asm} and write the file \mono{rom.bin}, halting with an error if the output binary exceeds \mono{128 KiB} (an indication of a potential recursion error in the code generation).
 
-See also \nameref{flag:remove}.\\
+See aslo \nameref{flag:remove}.\\
 
 \hrule
 
@@ -490,7 +490,7 @@ Removes the binary output file if \dasm encounters an error during assembly.\\
 
 Can be used in conjunction with \nameref{flag:maximum} to remove erroneous binaries, for example if a ROM size limit is exceeded.
 
-See also \nameref{flag:maximum}.
+See aslo \nameref{flag:maximum}.
 \\
 
 
@@ -1100,11 +1100,7 @@ N SET N+1
 
   dynm fna
   jmp fna_1     ; OK
-
-I = 1
-TMP SET fna_,I 
-  jmp TMP       ; the same as `jmp fna_1`
-
+  
   dynm fnb
   jmp fnb_2     ; OK
   jmp fnb_0     ; ERROR - does not exist
@@ -1158,12 +1154,10 @@ All directives (and incidentally also the mnemonics) can be prefixed with a dot 
 \index{Directives!Includes!\texttt{INCBIN}}
 
 \begin{usage}
-  INCBIN "filename" [,SkipBytes]
+  INCBIN "filename"
 \end{usage}
 
-Include the binary contents of another file literally in the output.
-
-If provided with the second argument, the first <SkipBytes> bytes of the file will be excluded. This can be useful for skipping unwanted headers, e. g. load address indicators, SID tune headers, etc.\\
+Include the binary contents of another file literally in the output.\\
 \hrule
 
 \subsection{\texttt{INCDIR}}
